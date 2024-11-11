@@ -5,8 +5,14 @@ pipeline {
         stage("checkout") {
             steps {
                 script {
-                    sh 'echo "hello, world"'
+                    sh "echo checkcout"
                 }
+            }
+        }
+
+        stage("Compile") {
+            steps {
+                sh "./gradlew compileJava"
             }
         }
     }
