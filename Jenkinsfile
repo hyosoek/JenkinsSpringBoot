@@ -38,5 +38,12 @@ pipeline {
           }
         }
 
+        stage("Docker Image Build"){
+          steps{
+              sh "docker build -t jenkins1111 ."
+          }
+        }
+
+
     } // stages의 중괄호 닫기
 } // pipeline의 중괄호 닫기
