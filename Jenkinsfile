@@ -31,5 +31,12 @@ pipeline {
                 ])
             }
         } // 코드 커버리지 스테이지의 중괄호 닫기
+
+        stage("Gradle Build"){
+          steps{
+              sh "./gradlew clean build"
+          }
+        }
+
     } // stages의 중괄호 닫기
 } // pipeline의 중괄호 닫기

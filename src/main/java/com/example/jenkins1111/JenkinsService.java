@@ -1,6 +1,10 @@
 package com.example.jenkins1111;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class JenkinsService {
+
     public int  hap(int n){
         int result = 0;
         for(int i=1; i<=n; i++){
@@ -8,6 +12,5 @@ public class JenkinsService {
         }
         return result;
     }
-    //테스트용 주석
 }
 
