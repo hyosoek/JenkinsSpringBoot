@@ -8,6 +8,6 @@ public class JenkinsService {
         }
         return result;
     }
-
+    //테스트용 주석
 }
 
