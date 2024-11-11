@@ -40,7 +40,7 @@ pipeline {
 
         stage("Docker Image Build") { // 첫 번째 Docker 이미지 빌드
             steps {
-                sh "whoami"
+                sh "docker ps"
             }
         }
 
