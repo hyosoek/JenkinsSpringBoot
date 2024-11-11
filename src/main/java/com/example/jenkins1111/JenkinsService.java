@@ -12,5 +12,6 @@ public class JenkinsService {
         }
         return result;
     }
+    //테스트 주석 추가
 }
 
