@@ -57,19 +57,34 @@ pipeline {
 
         stage("Docker Image Build - Actual Build") {
             steps {
-                sh "docker build -t jenkins1111 ."
+                sh "docker build -t tennfin1/jenkins1111  ."
             }
         }
 
-        stage("Set Variables") {
-            steps {
-                echo "Set Variables"
-                script {
-                    DOCKER_HUB_URL = 'registry.hub.docker.com'
-                    DOCKER_HUB_FULL_URL = 'https://' + DOCKER_HUB_URL
-                    DOCKER_HUB_CREDENTIAL_ID = 'docker-hub'
-                }
-            }
+//         stage("Set Variables") {
+//             steps {
+//                 echo "Set Variables"
+//                 script {
+//                     DOCKER_HUB_URL = 'registry.hub.docker.com'
+//                     DOCKER_HUB_FULL_URL = 'https://' + DOCKER_HUB_URL
+//                     DOCKER_HUB_CREDENTIAL_ID = 'docker-hub'
+//                 }
+//             }
+//         }
+        environment{
+           DOCKERHUB_CREDENTIALS = credentials("docker-hub")
+        }
+
+        stage('docker hub login'){
+          steps{
+              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+          }
+        }
+
+        stage('docker hub push'){
+          steps{
+              sh 'docker push tennfin1/jenkins1111:latest'
+          }
         }
     }
 }
