@@ -95,7 +95,7 @@ pipeline {
 
         stage('deploy'){
            steps{
-               sh "docker run -d --rm -p 8082:8080 --name jenkins1111 tennin1/jenkins1111"
+               sh "docker run -d --rm -p 8082:8080 --name jenkins1111 tennfin1/jenkins1111"
            }
         }
 
