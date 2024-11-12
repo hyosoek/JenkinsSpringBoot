@@ -52,6 +52,12 @@ pipeline {
             }
         }
 
+        stage("List Files in build/libs/") { // 파일 목록 출력 스테이지 추가
+            steps {
+                sh "ls -l build/libs/"
+            }
+        }
+
         stage("Docker Image Build") {
             steps {
                 sh "docker ps"
