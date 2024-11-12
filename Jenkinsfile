@@ -92,5 +92,12 @@ pipeline {
               sh 'docker push tennfin1/jenkins1111:latest'
           }
         }
+
+        stage('deploy'){
+           steps{
+               sh "docker run -d --rm -p 8082:8080 --name jenkins1111 tennin1/jenkins1111"
+           }
+        }
+
     }
 }
