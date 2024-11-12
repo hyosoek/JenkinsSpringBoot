@@ -1,4 +1,6 @@
-FROM bellsoft/liberica-openjdk-alpine:17
+FROM --platform=linux/amd64 bellsoft/liberica-openjdk-alpine:17
+
+#FROM bellsoft/liberica-openjdk-alpine:17
 
 #ARG JAR_FILE=build/libs/*.jar
 ##
