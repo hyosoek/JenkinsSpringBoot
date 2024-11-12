@@ -50,5 +50,18 @@ pipeline {
             }
         }
 
+        stage("Set Variables"){
+           steps{
+               echo "SetVariables"
+
+               script{
+                   DOCKER_HUB_URL = 'registry.hub.docker.com'
+                   DOCKER_HUB_FULL_URL = 'https://' + DOCKER_HUB_URL
+                   DOCKER_HUB_CREDENTIAL_ID = 'docker-hub'
+               }
+           }
+        }
+
+
     } // stages의 중괄호 닫기
 } // pipeline의 중괄호 닫기
